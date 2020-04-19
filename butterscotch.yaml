@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: butterscotch-service
+spec:
+  type: ClusterIP
+  selector:
+    app: butterscotch
+  ports:
+    - port: 5678 # Default port for image
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: butterscotch-deployment
+spec:
+  strategy:
+    type: Recreate
+  replicas: 1
+  selector:
+    matchLabels:
+      app: butterscotch
+  template:
+    metadata:
+      name: butterscotch-app
+      labels:
+        app: butterscotch
+    spec:
+      containers:
+        - name: butterscotch-app
+          image: hashicorp/http-echo
+          args:
+          - "-text=butterscotch-app"
