@@ -3,7 +3,7 @@
 Sample k8s application for Ingress controller demo.
 
 ## How to use
-At first, please do "kubectl apply", and then access to the Ingress IP retrieved by "kubectl get ingress".  
+At first, please do "kubectl apply", and then access the Ingress IP retrieved by "kubectl get ingress".  
 Ingress controller has the capablity of L7 loadbalancer, and you can check the funcitonality as follows:  
 - [http://$YOUR_INGRESS_IP/cinnamon](http://$YOUR_INGRESS_IP/cinnamon)  
 The display will show "cinnamon-app".  
