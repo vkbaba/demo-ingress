@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: sample-ingress
@@ -9,10 +9,16 @@ spec:
   - http:
       paths:
         - path: /butterscotch
+          pathType: Prefix
           backend:
-            serviceName: butterscotch-service
-            servicePort: 5678
+            servive:
+              name: butterscotch-service
+              port:
+                number: 5678
         - path: /cinnamon
+          pathType: Prefix
           backend:
-            serviceName: cinnamon-service
-            servicePort: 5678
+            servive:
+              name: cinnamon-service
+              port:
+                number: 5678
