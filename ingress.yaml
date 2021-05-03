@@ -11,14 +11,14 @@ spec:
         - path: /butterscotch
           pathType: Prefix
           backend:
-            servive:
+            service:
               name: butterscotch-service
               port:
                 number: 5678
         - path: /cinnamon
           pathType: Prefix
           backend:
-            servive:
+            service:
               name: cinnamon-service
               port:
                 number: 5678
